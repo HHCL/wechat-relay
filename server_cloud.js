@@ -76,6 +76,7 @@ function wechatRequest(pathWithQuery, method, headers, body) {
             path: fullPath, method: method || 'POST',
             headers: { ...headers, 'Host': WECHAT_API_HOST },
             timeout: 30000,
+            rejectUnauthorized: false,
         }, (res) => {
             let data = [];
             res.on('data', c => data.push(c));
