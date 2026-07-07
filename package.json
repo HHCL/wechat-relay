@@ -1,0 +1,11 @@
+{
+  "name": "wechat-relay",
+  "version": "1.0.0",
+  "description": "WeChat API Relay Server - bypass IP whitelist with fixed-IP VPS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node -e \"console.log('Relay server ready')\""
+  },
+  "dependencies": {}
+}
