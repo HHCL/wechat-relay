@@ -71,12 +71,11 @@ function wechatRequest(pathWithQuery, method, headers, body) {
     return new Promise((resolve, reject) => {
         const [path, query] = pathWithQuery.split('?');
         const fullPath = path + (query ? '?' + query : '');
-        const req = https.request({
-            hostname: WECHAT_API_HOST, port: 443,
+        const req = http.request({
+            hostname: WECHAT_API_HOST, port: 80,
             path: fullPath, method: method || 'POST',
             headers: { ...headers, 'Host': WECHAT_API_HOST },
             timeout: 30000,
-            rejectUnauthorized: false,
         }, (res) => {
             let data = [];
             res.on('data', c => data.push(c));
